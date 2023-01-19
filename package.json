@@ -1,0 +1,42 @@
+{
+  "name": "fx_backend_v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "babel-node": "babel-node --presets=@babel/preset-env",
+    "dev": "nodemon --exec npm run babel-node -- app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@oanda/v20": "^3.0.25-0",
+    "axios": "^0.27.2",
+    "bcrypt": "^5.1.0",
+    "body-parse": "^0.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "ig-rest-api": "^1.1.0",
+    "ig-trading-api": "^0.13.4",
+    "lightstreamer-client-node": "^8.0.5",
+    "moment": "^2.29.3",
+    "moment-timezone": "^0.5.34",
+    "mongoose": "^6.8.2",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.1",
+    "nodemon": "^2.0.16"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/node": "^7.18.5",
+    "@babel/plugin-transform-runtime": "^7.18.0",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/register": "^7.17.7",
+    "@babel/runtime": "^7.18.0"
+  }
+}

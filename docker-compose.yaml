@@ -1,0 +1,42 @@
+version: "3.8"
+services:
+  mongodbForex:
+    image: docker.io/bitnami/mongodb:latest
+#    environment:
+#      - ALLOW_EMPTY_PASSWORD=yes
+#      - MONGODB_USERNAME=admin
+#      - MONGODB_PASSWORD=pass
+#      - MONGODB_DATABASE=dwDB
+    restart:
+      on-failure
+    ports:
+      - "27017:27017"
+    volumes:
+      - 'mongodb_forex_data:/bitnami/mongodb'
+    networks:
+      - network
+
+  fx-back:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart:
+      on-failure
+    ports:
+      - "8000:8000"
+    container_name:
+      "fx-back"
+    environment:
+      - USERNAME=boban_16
+      - PASSWORD=Cesco1988!
+      - API=12cee9597207bcf7e6b96575f046aaa2a7dd56be
+    networks:
+      - network
+
+networks:
+  network:
+    driver: bridge
+
+volumes:
+  mongodb_forex_data:
+    driver: local
