@@ -10,6 +10,8 @@ USER node
 
 RUN yarn install
 
+ENV PROD=true
+
 COPY --chown=node:node . .
 
 EXPOSE 8000

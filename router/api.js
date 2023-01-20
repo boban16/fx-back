@@ -3,7 +3,7 @@ import {
   getAllIgActivities,
   getSetting,
   getSettings,
-  getUser,
+  getUser, newIgActivity,
   newUser,
   updateAccountSettings,
   userFindOne
@@ -90,25 +90,25 @@ router.post('/openCrossOrders/:id', async function(req, res) {
   // avvio i vari cross
   const step0Response = await step0(accountData, crossConfigList)
 
-  res.send("ok")
+  res.send(step0Response)
 })
 
-/*router.post('/restartSelected/:id', async function(req, res) {
+router.get('/modificaPip/:id', async function(req, res) {
   const accountId = req.params.id;
   const ordersToOpen = req.body
 
+  // recupero dal db le informazioni relative all'utente accountId
   const accountData = await userFindOne(accountId)
-  const userSettings = await getSetting(accountData._id)
 
-  // recupero da settings la configurazione dei cross da aprire
-  let crossConfigList = userSettings.watchlist.filter(row=>{
-    return ordersToOpen.epic.includes(row.epic)
-  });
+  const response = await getAllIgActivities(accountData._id)
 
-  const step0Response = await stepA0(accountData, crossConfigList)
+  for (const res of response){
+    res.config.percentage = 0.3
+    await newIgActivity(accountData, res.step, res.epic, res.config, res.orders, res.positions)
+  }
 
-  res.send("ok")
-})*/
+  res.send(response)
+})
 
 router.post('/closeSelected/:id', async function(req, res) {
   const accountId = req.params.id;
@@ -120,11 +120,9 @@ router.post('/closeSelected/:id', async function(req, res) {
   const client = new APIClient(APIClient.URL_DEMO, accountData.apiKey);
   await client.rest.login.createSession(accountData.username, accountData.password);
 
-  console.log(epicToClose.epic)
+  const igResponse = await closeActivity(client, accountData, epicToClose.epic)
 
-  await closeActivity(client, accountData, epicToClose.epic)
-
-  res.send("ok")
+  res.send(igResponse)
 })
 
 

@@ -26,10 +26,23 @@ services:
       - "8000:8000"
     container_name:
       "fx-back"
-    environment:
-      - USERNAME=boban_16
-      - PASSWORD=Cesco1988!
-      - API=12cee9597207bcf7e6b96575f046aaa2a7dd56be
+#    environment:
+#      - USERNAME=boban_16
+#      - PASSWORD=Cesco1988!
+#      - API=12cee9597207bcf7e6b96575f046aaa2a7dd56be
+    networks:
+      - network
+
+  fx-front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart:
+      on-failure
+    ports:
+      - "3000:3000"
+    container_name:
+      "fx-front"
     networks:
       - network
 
