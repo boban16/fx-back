@@ -28,7 +28,8 @@
     "mongoose": "^6.8.2",
     "morgan": "^1.10.0",
     "node-cron": "^3.0.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "ta-lib": "^0.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",

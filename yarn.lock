@@ -2646,7 +2646,7 @@ ig-rest-api@^1.1.0:
     axios "^0.24.0"
     rambda "^6.9.0"
 
-ig-trading-api@^0.13.3:
+ig-trading-api@^0.13.4:
   version "0.13.4"
   resolved "https://registry.yarnpkg.com/ig-trading-api/-/ig-trading-api-0.13.4.tgz#f6c5b6b9ee8a406ecd47cef986cbc9cc80ac52b3"
   integrity sha512-Id4dbgL4fjW9GjElx9RUx6dRfZnmhPaHnA4wpRxJCmrQ+R3e0KtS5SPYmXWsE1h3fmB7x2C+BrB+zdUNy65MfA==
@@ -3652,6 +3652,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+ta-lib@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/ta-lib/-/ta-lib-0.11.0.tgz#cb3f4f209ad23e0601df72b7389c85e092a20258"
+  integrity sha512-QY2/fPe8d1j++peFOVMBCDLP0WRz4YF9/zQ/u/KsOfYlOS12sOD2+I0DzzfKwnFGapJ20dpt7coATM+BFbEpFg==
 
 tar@^6.1.11:
   version "6.1.13"
